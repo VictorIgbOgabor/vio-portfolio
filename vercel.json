@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "https://vioportfolio.name.ng/$1",
-      "permanent": true
-    }
-  ]
-}
