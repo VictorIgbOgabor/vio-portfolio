@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-commerce Website Development — Victor Igbaji Ogabor | VIO</title>
+  <meta name="description" content="Professional e-commerce website development for businesses worldwide. Custom online stores built to sell, scale, and convert — by Victor Igbaji Ogabor (VIO)." />
+  <meta name="keywords" content="ecommerce website development, online store developer Nigeria, custom ecommerce website, ecommerce developer, online shop design, ecommerce web developer Nigeria" />
+  <meta property="og:title" content="E-commerce Website Development | VIO" />
+  <meta property="og:description" content="Professional e-commerce website development for businesses worldwide. Custom online stores built to sell, scale, and convert." />
+  <meta property="og:url" content="https://vioportfolio.name.ng/services/ecommerce-website-development" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vioportfolio.name.ng/services/ecommerce-website-development" />
+  <meta name="theme-color" content="#0A1628" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital@1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-mid: #0F1F3D;
+      --navy-light: #162544;
+      --orange: #E8621A;
+      --orange-light: #FF7A35;
+      --orange-dim: rgba(232, 98, 26, 0.12);
+      --text: #E8EDF5;
+      --text-muted: #8A9BB5;
+      --text-dim: #4A5A73;
+      --border: rgba(255,255,255,0.07);
+      --mono: 'IBM Plex Mono', monospace;
+      --body: 'Plus Jakarta Sans', sans-serif;
+      --display: 'Playfair Display', serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body);
+      background: var(--navy);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV (exact match to site) ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+      background: rgba(10, 22, 40, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo img { height: 36px; width: auto; display: block; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--text); }
+    .nav-cta {
+      background: var(--orange) !important;
+      color: #fff !important;
+      padding: 0.5rem 1.25rem !important;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--orange-light) !important; }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(232,98,26,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+    .hero-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--orange);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .hero-label::before {
+      content: '';
+      width: 30px; height: 1px;
+      background: var(--orange);
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-family: var(--display);
+      font-style: italic;
+      color: var(--orange);
+    }
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--orange);
+      color: #fff;
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); }
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--orange); color: var(--text); }
+
+    /* ─── STORE MOCKUP ─── */
+    .hero-visual { position: relative; }
+    .store-mockup {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+    }
+    .mockup-bar {
+      background: var(--navy-mid);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mockup-dot:nth-child(1) { background: #FF5F57; }
+    .mockup-dot:nth-child(2) { background: #FEBC2E; }
+    .mockup-dot:nth-child(3) { background: #28C840; }
+    .mockup-url {
+      margin-left: 0.75rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      background: var(--navy);
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      flex: 1;
+    }
+    .mockup-body { padding: 1.5rem; }
+    .mockup-hero-strip {
+      background: linear-gradient(135deg, var(--navy-mid), var(--orange-dim));
+      border-radius: 8px;
+      height: 80px;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      border: 1px solid var(--border);
+    }
+    .mockup-hero-strip span { font-size: 0.75rem; font-weight: 600; }
+    .mockup-hero-strip .badge {
+      margin-left: auto;
+      background: var(--orange);
+      color: #fff;
+      font-size: 0.65rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: var(--mono);
+    }
+    .mockup-products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .mockup-product {
+      background: var(--navy-mid);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem;
+    }
+    .mockup-product-img {
+      height: 50px;
+      background: linear-gradient(135deg, var(--navy-light), var(--orange-dim));
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+    .mockup-product-name { font-size: 0.65rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+    .mockup-product-price { font-size: 0.7rem; font-weight: 700; color: var(--orange); font-family: var(--mono); }
+    .mockup-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+    .mockup-stat {
+      background: var(--orange-dim);
+      border: 1px solid rgba(232,98,26,0.2);
+      border-radius: 6px;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    .mockup-stat-val { font-family: var(--mono); font-size: 0.8rem; font-weight: 600; color: var(--orange); }
+    .mockup-stat-label { font-size: 0.6rem; color: var(--text-dim); margin-top: 0.15rem; }
+
+    /* ─── STATS STRIP ─── */
+    .stats-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+    }
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-num { font-family: var(--mono); font-size: 2rem; font-weight: 600; color: var(--orange); display: block; }
+    .stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 6rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--orange);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .section-title em { font-family: var(--display); font-style: italic; color: var(--orange); }
+    .section-sub { color: var(--text-muted); font-size: 1rem; line-height: 1.75; max-width: 560px; }
+
+    /* ─── FEATURES ─── */
+    .features { background: var(--navy-mid); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .feature-card {
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--orange), transparent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .feature-card:hover { border-color: rgba(232,98,26,0.3); transform: translateY(-4px); }
+    .feature-card:hover::before { opacity: 1; }
+    .feature-icon {
+      width: 44px; height: 44px;
+      background: var(--orange-dim);
+      border: 1px solid rgba(232,98,26,0.2);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.2rem;
+    }
+    .feature-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.6rem; }
+    .feature-desc { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
+
+    /* ─── PROCESS ─── */
+    .process-steps {
+      margin-top: 3.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .step {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      background: var(--navy-mid);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: border-color 0.2s;
+    }
+    .step:hover { border-color: rgba(232,98,26,0.25); }
+    .step-num { font-family: var(--mono); font-size: 1.5rem; font-weight: 600; color: var(--orange); opacity: 0.5; flex-shrink: 0; line-height: 1; margin-top: 0.1rem; }
+    .step-content h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .step-content p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; }
+
+    /* ─── TECH ─── */
+    .tech-bg { background: var(--navy-mid); }
+    .tech-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
+    .tech-pill {
+      background: var(--navy);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .tech-pill:hover { border-color: var(--orange); color: var(--text); }
+
+    /* ─── PRICING ─── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      align-items: start;
+    }
+    .pricing-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .pricing-card.featured {
+      border-color: var(--orange);
+      background: linear-gradient(135deg, var(--navy-mid), rgba(232,98,26,0.05));
+    }
+    .featured-label {
+      position: absolute;
+      top: -12px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--orange);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      font-family: var(--mono);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+    .pricing-tier { font-family: var(--mono); font-size: 0.72rem; color: var(--orange); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .pricing-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .pricing-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6; }
+    .pricing-price { font-family: var(--mono); font-size: 1.75rem; font-weight: 600; color: var(--orange); margin-bottom: 0.25rem; }
+    .pricing-note { font-size: 0.75rem; color: var(--text-dim); margin-bottom: 1.75rem; }
+    .pricing-features { list-style: none; margin-bottom: 2rem; }
+    .pricing-features li {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .pricing-features li:last-child { border-bottom: none; }
+    .pricing-features li::before { content: '✓'; color: var(--orange); font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+    .btn-pricing {
+      display: block;
+      text-align: center;
+      padding: 0.875rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-pricing-outline { border: 1px solid var(--border); color: var(--text-muted); }
+    .btn-pricing-outline:hover { border-color: var(--orange); color: var(--text); }
+    .btn-pricing-fill { background: var(--orange); color: #fff; }
+    .btn-pricing-fill:hover { background: var(--orange-light); }
+
+    /* ─── FAQ ─── */
+    .faq-bg { background: var(--navy-mid); }
+    .faq-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1rem; max-width: 760px; }
+    .faq-item { background: var(--navy); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: var(--body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--orange); }
+    .faq-icon { color: var(--orange); font-size: 1.2rem; flex-shrink: 0; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-a.open { max-height: 200px; }
+    .faq-a-inner { padding: 0 1.5rem 1.25rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; }
+
+    /* ─── CTA ─── */
+    .cta-section { text-align: center; position: relative; overflow: hidden; }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(232,98,26,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-inner { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
+    .cta-inner .section-sub { max-width: 100%; margin: 0 auto 2.5rem; text-align: center; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── FOOTER (exact match) ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+    }
+    footer p { font-size: 0.8rem; color: var(--text-dim); }
+    footer a { color: var(--orange); text-decoration: none; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(10,22,40,0.98); flex-direction: column; padding: 1.5rem; gap: 1.25rem; border-bottom: 1px solid var(--border); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; }
+      .hero { padding: 6rem 1.25rem 3rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-visual { order: -1; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .features-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      section { padding: 4rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV — matches vioportfolio.name.ng exactly -->
+  <nav>
+    <a href="https://www.vioportfolio.name.ng/" class="nav-logo">
+      <img src="https://vioportfolio.name.ng/favicon.ico" alt="VIO" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <!-- Fallback text logo if image fails -->
+      <span style="display:none; font-family:'IBM Plex Mono',monospace; font-size:1.1rem; font-weight:500; color:#E8EDF5;">VIO<span style="color:#E8621A;">.</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="https://www.vioportfolio.name.ng/">Home</a></li>
+      <li><a href="https://www.vioportfolio.name.ng/index.html#about">About</a></li>
+      <li><a href="https://www.vioportfolio.name.ng/works">Works</a></li>
+      <li><a href="https://www.vioportfolio.name.ng/services" class="active">Services</a></li>
+      <li><a href="https://www.vioportfolio.name.ng/index.html#contact">Contact</a></li>
+      <li><a href="https://wa.me/2348146589595" class="nav-cta">Get Started</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-label">E-commerce Development</p>
+        <h1>Online Stores Built to <em>Sell</em> and Scale</h1>
+        <p class="hero-desc">
+          Whether you're launching your first product or scaling an existing business, I build fast, conversion-optimised e-commerce websites that work for you around the clock — for any business, anywhere in the world.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/2348146589595?text=Hi Victor, I'm interested in e-commerce website development" class="btn-primary">Start Your Project →</a>
+          <a href="#pricing" class="btn-secondary">View Pricing</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="store-mockup">
+          <div class="mockup-bar">
+            <div class="mockup-dot"></div>
+            <div class="mockup-dot"></div>
+            <div class="mockup-dot"></div>
+            <div class="mockup-url">yourstore.com</div>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-hero-strip">
+              <span>Summer Collection 2026</span>
+              <div class="badge">LIVE</div>
+            </div>
+            <div class="mockup-products">
+              <div class="mockup-product">
+                <div class="mockup-product-img"></div>
+                <div class="mockup-product-name">Product One</div>
+                <div class="mockup-product-price">₦12,000</div>
+              </div>
+              <div class="mockup-product">
+                <div class="mockup-product-img"></div>
+                <div class="mockup-product-name">Product Two</div>
+                <div class="mockup-product-price">$8.50</div>
+              </div>
+              <div class="mockup-product">
+                <div class="mockup-product-img"></div>
+                <div class="mockup-product-name">Product Three</div>
+                <div class="mockup-product-price">£21.00</div>
+              </div>
+            </div>
+            <div class="mockup-stats">
+              <div class="mockup-stat">
+                <div class="mockup-stat-val">247</div>
+                <div class="mockup-stat-label">Orders</div>
+              </div>
+              <div class="mockup-stat">
+                <div class="mockup-stat-val">99%</div>
+                <div class="mockup-stat-label">Uptime</div>
+              </div>
+              <div class="mockup-stat">
+                <div class="mockup-stat-val">100</div>
+                <div class="mockup-stat-label">PageSpeed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div>
+        <span class="stat-num">100</span>
+        <div class="stat-label">PageSpeed Score</div>
+      </div>
+      <div>
+        <span class="stat-num">30+</span>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div>
+        <span class="stat-num">24h</span>
+        <div class="stat-label">Response Time</div>
+      </div>
+      <div>
+        <span class="stat-num">🌍</span>
+        <div class="stat-label">Global Clients Welcome</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT YOU GET -->
+  <section class="features">
+    <div class="section-inner">
+      <p class="section-label">What's Included</p>
+      <h2 class="section-title">Everything Your Online Store <em>Needs</em></h2>
+      <p class="section-sub">Every e-commerce project I deliver is built with performance, security, and conversions in mind from day one.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🛍️</div>
+          <h3 class="feature-title">Product Management</h3>
+          <p class="feature-desc">Easy-to-manage product listings with variants, categories, inventory tracking, and bulk upload support.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💳</div>
+          <h3 class="feature-title">Payment Integration</h3>
+          <p class="feature-desc">Paystack, Flutterwave, Stripe, and crypto support. Accept payments from customers anywhere in the world.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3 class="feature-title">Mobile-First Design</h3>
+          <p class="feature-desc">Over 70% of shoppers buy on mobile. Every store I build is fully responsive and fast on all screen sizes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3 class="feature-title">Secure Checkout</h3>
+          <p class="feature-desc">SSL-encrypted checkout, secure order processing, and customer data protection built in by default.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h3 class="feature-title">Order & Shipping</h3>
+          <p class="feature-desc">Order management dashboard, shipping configuration, automated confirmation emails, and order tracking.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3 class="feature-title">SEO Optimised</h3>
+          <p class="feature-desc">Clean code, fast load times, structured data, and meta optimisation so your store ranks in search results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section>
+    <div class="section-inner">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">From Idea to <em>Live Store</em></h2>
+      <p class="section-sub">A clear, collaborative process so you always know what's happening and when your store goes live.</p>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Discovery Call</h3>
+            <p>We talk about your business, products, target audience, and goals. I ask the right questions so the store is built for your specific customers.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Design & Proposal</h3>
+            <p>I design the layout, product pages, and checkout flow. You see and approve the look — and get a clear scope and price — before any code is written.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Build & Integrate</h3>
+            <p>Development begins — store structure, payment gateways, inventory system, and all custom features are built and thoroughly tested.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h3>Launch & Handoff</h3>
+            <p>Your store goes live. I provide a walkthrough, documentation, and post-launch support so you can manage it confidently from day one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="tech-bg">
+    <div class="section-inner">
+      <p class="section-label">Technologies</p>
+      <h2 class="section-title">Built With the <em>Right Tools</em></h2>
+      <p class="section-sub">I choose technologies based on what gives your store the best performance, scalability, and long-term maintainability.</p>
+      <div class="tech-grid">
+        <span class="tech-pill">HTML5 / CSS3</span>
+        <span class="tech-pill">JavaScript</span>
+        <span class="tech-pill">React</span>
+        <span class="tech-pill">Next.js</span>
+        <span class="tech-pill">Node.js</span>
+        <span class="tech-pill">WooCommerce</span>
+        <span class="tech-pill">Shopify</span>
+        <span class="tech-pill">Paystack</span>
+        <span class="tech-pill">Flutterwave</span>
+        <span class="tech-pill">Stripe</span>
+        <span class="tech-pill">Vercel</span>
+        <span class="tech-pill">Cloudflare</span>
+        <span class="tech-pill">MongoDB</span>
+        <span class="tech-pill">REST APIs</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="section-inner">
+      <p class="section-label">Pricing</p>
+      <h2 class="section-title">Clear Pricing. <em>No Surprises.</em></h2>
+      <p class="section-sub">Packages built around the most common needs. Not sure which fits? Start a conversation — we'll figure it out together.</p>
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Basic</div>
+          <div class="pricing-name">Starter Store</div>
+          <div class="pricing-desc">Perfect for launching a simple online store with essential selling features.</div>
+          <div class="pricing-price">$299</div>
+          <div class="pricing-note">One-time · Delivered in 7–10 days</div>
+          <ul class="pricing-features">
+            <li>Up to 20 products</li>
+            <li>Mobile-responsive design</li>
+            <li>1 payment gateway</li>
+            <li>Basic SEO setup</li>
+            <li>Contact & order forms</li>
+            <li>2 rounds of revision</li>
+            <li>Deployed & live</li>
+          </ul>
+          <a href="https://wa.me/2348146589595?text=Hi Victor, I'm interested in the Starter Store e-commerce package ($299)" class="btn-pricing btn-pricing-outline">Get Started →</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="featured-label">MOST POPULAR</div>
+          <div class="pricing-tier">Standard</div>
+          <div class="pricing-name">Growth Store</div>
+          <div class="pricing-desc">For businesses ready to scale with a fully-featured, conversion-focused online store.</div>
+          <div class="pricing-price">$599</div>
+          <div class="pricing-note">One-time · Delivered in 14–21 days</div>
+          <ul class="pricing-features">
+            <li>Up to 100 products</li>
+            <li>Custom UI/UX design</li>
+            <li>2 payment gateways</li>
+            <li>Full SEO optimisation</li>
+            <li>Order management dashboard</li>
+            <li>Email notifications</li>
+            <li>Analytics integration</li>
+            <li>5 rounds of revision</li>
+            <li>30-day post-launch support</li>
+          </ul>
+          <a href="https://wa.me/2348146589595?text=Hi Victor, I'm interested in the Growth Store e-commerce package ($599)" class="btn-pricing btn-pricing-fill">Get Started →</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Premium</div>
+          <div class="pricing-name">Enterprise Store</div>
+          <div class="pricing-desc">For established businesses that need a custom, fully scalable e-commerce solution.</div>
+          <div class="pricing-price">Custom</div>
+          <div class="pricing-note">Contact for quote · Timeline on scope</div>
+          <ul class="pricing-features">
+            <li>Unlimited products</li>
+            <li>Fully custom design</li>
+            <li>Multi-currency support</li>
+            <li>All payment gateways</li>
+            <li>Inventory & CRM integration</li>
+            <li>Advanced backend & APIs</li>
+            <li>Unlimited revisions</li>
+            <li>90-day post-launch support</li>
+            <li>Direct line of communication</li>
+          </ul>
+          <a href="https://wa.me/2348146589595?text=Hi Victor, I have an enterprise e-commerce project I'd like to discuss" class="btn-pricing btn-pricing-outline">Let's Talk →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-bg">
+    <div class="section-inner">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title">Common <em>Questions</em></h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How long does it take to build an e-commerce store?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Timelines depend on complexity. A basic starter store takes 7–10 days. A full-featured growth store takes 14–21 days. Enterprise projects are scoped individually. I give you a clear timeline before we start.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do you work with clients outside Nigeria?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Absolutely. Most of my clients are international. I work remotely with businesses across Africa, Europe, North America, and beyond. Communication is async-friendly across time zones.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Will I be able to manage the store myself after launch?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes. Every store I build comes with a clear handoff — a walkthrough, documentation, and guidance so you can add products, process orders, and manage the store independently without needing a developer.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What payment methods do you accept for your services?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">I accept Paystack, bank transfer, cryptocurrency, and Grey for international payments. The standard arrangement is 50% upfront, 50% on delivery. We can discuss the most convenient option for you.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can I request a custom e-commerce scope not listed here?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Absolutely. I handle a wide range of e-commerce work including subscription stores, digital product sales, marketplace-style builds, and more. Just reach out and we'll scope it together.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <p class="section-label" style="text-align:center;">Ready to Launch?</p>
+      <h2 class="section-title">Let's Build Your <em>Online Store</em></h2>
+      <p class="section-sub">Have a product to sell? Let's talk about what your store needs and how we can make it happen — fast, clean, and built to convert.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/2348146589595?text=Hi Victor, I want to build an e-commerce store" class="btn-primary">Start the Conversation →</a>
+        <a href="https://www.vioportfolio.name.ng/services" class="btn-secondary">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER — matches site footer -->
+  <footer>
+    <p>© 2026 VIO · Victor Igbaji Ogabor · All Rights Reserved &nbsp;·&nbsp; <a href="https://www.vioportfolio.name.ng/">← Back to Portfolio</a></p>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    document.getElementById('navToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // FAQ accordion
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+      if (!isOpen) {
+        answer.classList.add('open');
+        icon.textContent = '×';
+      }
+    }
+  </script>
+
+</body>
+</html>
