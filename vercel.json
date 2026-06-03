@@ -15,6 +15,30 @@
     {
       "source": "/services/ecommerce",
       "destination": "/ecommerce-service.html"
+    },
+    {
+      "source": "/services/mobile-app",
+      "destination": "/mobile-app.html"
+    },
+    {
+      "source": "/services/graphic-design",
+      "destination": "/graphic-design.html"
+    },
+    {
+      "source": "/services/ui-ux-design",
+      "destination": "/ui-ux-design.html"
+    },
+    {
+      "source": "/services/content-writing",
+      "destination": "/content-writing.html"
+    },
+    {
+      "source": "/services/brand-strategy",
+      "destination": "/brand-strategy.html"
+    },
+    {
+      "source": "/services/social-media",
+      "destination": "/social-media.html"
     }
   ]
 }
