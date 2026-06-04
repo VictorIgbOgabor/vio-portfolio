@@ -712,7 +712,45 @@ footer p span{color:var(--orange-3);}
   .timeline-dot{left:-28px;}
   footer{padding:18px 20px;}
 }
-</style>
+
+  /* ── MOBILE TAP TARGETS ── */
+  @media (max-width: 900px) {
+    a, button {
+      min-height: 44px;
+      min-width: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .nav-links a {
+      padding: 12px 0;
+    }
+    .nav-drawer a {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+    }
+    .filter-btn {
+      min-height: 44px;
+      padding: 10px 20px;
+    }
+    .work-card .card-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-link {
+      min-height: 56px;
+    }
+    .plan-cta {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  </style>
 </head>
 <body>
 
