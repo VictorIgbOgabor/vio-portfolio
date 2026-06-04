@@ -209,7 +209,34 @@ footer p span{color:var(--orange-3);}
     }
   }
 
-  </style>
+  
+  body:not(.dark) {
+    --off:#F7F8FC;
+    --border:#E4E8F0;
+    --text:#1A2B4A;
+    --muted:#6B7A99;
+    --card:#FFFFFF;
+    --bg:#F7F8FC;
+    --nav-bg:rgba(247,248,252,0.95);
+  }
+  body:not(.dark) .work-card {
+    background:#FFFFFF;
+    border-color:#E4E8F0;
+    color:#1A2B4A;
+  }
+  body:not(.dark) .card-name { color:#1A2B4A; }
+  body:not(.dark) .card-desc { color:#6B7A99; }
+  body:not(.dark) .card-cat { color:var(--orange); }
+  body:not(.dark) .ctag { background:#F7F8FC; color:#6B7A99; border-color:#E4E8F0; }
+  body:not(.dark) .filter-btn { background:#FFFFFF; color:#6B7A99; border-color:#E4E8F0; }
+  body:not(.dark) .filter-btn.active { background:var(--orange); color:#fff; border-color:var(--orange); }
+  body:not(.dark) nav { background:rgba(247,248,252,0.95); border-color:#E4E8F0; }
+  body:not(.dark) .nav-links a { color:#6B7A99; }
+  body:not(.dark) .page-hero { background:#F7F8FC; }
+  body:not(.dark) .section-title { color:#1A2B4A; }
+  body:not(.dark) .section-desc { color:#6B7A99; }
+
+</style>
 </head>
 <body>
 
